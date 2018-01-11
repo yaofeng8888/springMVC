@@ -3,6 +3,7 @@ package com.yaofeng.springmvc.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class Login {
@@ -13,7 +14,8 @@ public class Login {
 	}
 	
 	@RequestMapping(value="/login",method=RequestMethod.POST)
-	public String login(String username,String password) {
+	public String login(@RequestParam("username")String name,@RequestParam("password")String pass) {
+		System.out.println(name+"----------"+pass);
 		return "success";
 	}
 }
