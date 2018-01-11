@@ -14,8 +14,8 @@ public class Login {
 	}
 	
 	@RequestMapping(value="/login",method=RequestMethod.POST)
-	public String login(@RequestParam("username")String name,@RequestParam("password")String pass) {
-		System.out.println(name+"----------"+pass);
+	public String login(LoginUser user) {
+		System.out.println(user.getUsername()+"----------"+user.getPassword());
 		return "success";
 	}
 }
