@@ -42,7 +42,8 @@
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<!-- 如果没有写 则默认找/WEB-INF/[名称]-servlet.xml 也可以自己指定位置：使用classpath：路径名称 -->
+			<!-- 如果没有写 则默认找/WEB-INF/[名称]-servlet.xml 
+			也可以自己指定位置：使用classpath：路径名称 -->
 			<param-value>classpath:spring-mvc.xml</param-value>
 		</init-param>
 	</servlet>

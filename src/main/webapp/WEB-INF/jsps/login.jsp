@@ -8,9 +8,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="login" method="POST">
+<form action="user/login" method="POST">
+			======${name }
         <label for="username">用户名:<input type="text" id="username" name="username" /></label>
         <label for="password">密码:<input type="text" id="password" name="password" /></label>
+        <label for="address">省份:<input type="text" id="pro" name="addr.pro" /></label>
+        <label for="city">城市:<input type="text" id="city" name="addr.city" /></label>
         <input type="submit" value="登陆">
     </form>
 </body>
