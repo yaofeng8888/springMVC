@@ -14,8 +14,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.alibaba.fastjson.JSON;
 
 @Controller
 public class Login {
@@ -32,7 +32,7 @@ public class Login {
 		return "login";
 	}
 	
-	@RequestMapping(value="/json" ,method=RequestMethod.GET)
+	/*@RequestMapping(value="/json" ,method=RequestMethod.GET)
 	public void json(HttpServletRequest request,HttpServletResponse response,
 			HttpSession session) throws Exception {
 		Map<String,Object>map = new HashMap<String,Object>();
@@ -43,6 +43,14 @@ public class Login {
 		out.print(jsonString);
 		out.flush();
 		out.close();
+	}*/
+	@ResponseBody
+	@RequestMapping(value="/json2" ,method=RequestMethod.GET)
+	public Map<String,Object> json2(){
+		Map<String,Object>map = new HashMap<String,Object>();
+		map.put("name","ÕÅÈý");
+		map.put("age", 13);
+		return map;
 	}
 	
 	
