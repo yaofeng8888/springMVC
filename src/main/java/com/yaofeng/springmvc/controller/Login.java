@@ -1,5 +1,7 @@
 package com.yaofeng.springmvc.controller;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import org.springframework.stereotype.Controller;
@@ -7,7 +9,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 
 @Controller
@@ -65,4 +69,33 @@ public class Login {
 	public String test() {
 		return "test";
 	}
+	
+	@RequestMapping(value="/test1",method=RequestMethod.GET)
+	public String test1() {
+		
+		return"upload";
+	}
+	//文件上传
+	/*@RequestMapping(value="/upload",method=RequestMethod.POST)
+	public String upload(@RequestParam("name")String name,@RequestParam("file")
+			MultipartFile file) throws Exception, Exception {
+		System.out.println("name="+name);
+		if(!file.isEmpty()) {
+			file.transferTo(new File("E:/"+file.getOriginalFilename()));
+		}
+		return "uploadsuccess";
+		
+	}*/
+	@RequestMapping(value = "/upload", method = RequestMethod.POST)
+	public String upload(@RequestParam("name") String name, @RequestParam("file") MultipartFile file) throws Exception {
+		System.out.println("+++++++++++++++"+name);
+		if(!file.isEmpty()){
+			file.transferTo(new File("d:/"+file.getOriginalFilename()));
+		}
+		return "uploadsuccess";
+	}
+	
+	
+	
+	
 }

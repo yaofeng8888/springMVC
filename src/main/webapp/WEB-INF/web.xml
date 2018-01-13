@@ -55,7 +55,7 @@
 			<param-name>contextConfigLocation</param-name>
 			<!-- 如果没有写 则默认找/WEB-INF/[名称]-servlet.xml 
 			也可以自己指定位置：使用classpath：路径名称 -->
-			<param-value>classpath:spring-mvc.xml</param-value>
+			<param-value>classpath:spring-*.xml</param-value>
 		</init-param>
 	</servlet>
 	<!-- 1、/* 拦截所有 jsp、js、png css 建议不试用 
