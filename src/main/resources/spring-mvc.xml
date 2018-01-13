@@ -19,6 +19,10 @@ xmlns:mvc="http://www.springframework.org/schema/mvc"
 <!--注解驱动  处理器映射器和处理器适配器 -->
 <mvc:annotation-driven/>
 
+<!-- 静态资源放行 -->
+<!--location就是指的本地工程中的静态资源的位置-->
+<!-- mapping就是值得是url地址中的映射 -->
+<mvc:resources location="/js/" mapping="/js/**"/>
 <!-- 试图解析器 -->
 <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 <property name="prefix" value="/WEB-INF/jsps/"></property>
