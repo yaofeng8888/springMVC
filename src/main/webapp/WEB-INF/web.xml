@@ -3,6 +3,17 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
                       http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
 	version="3.1" metadata-complete="true">
+	
+	<!-- 解析RESTful风格的请求 -->
+	<filter>
+		<filter-name>HiddenHttpMethodFilter</filter-name>
+		<filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>HiddenHttpMethodFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
 	<!-- 中文乱码过滤器 来自于spring的框架 建议放在DispathcherServlet之前 -->
 	<!--一般用来解决post类型中文乱码问题-->
 	<!-- get类型的乱码问题解决
